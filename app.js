@@ -18,7 +18,8 @@ var express    = require("express"),
         
     
 
-mongoose.connect("mongodb://localhost/yelp_camp_v12", {useMongoClient: true});
+//mongoose.connect("mongodb://localhost/yelp_camp_v12", {useMongoClient: true});
+mongoose.connect("mongodb://john:rusty@ds113785.mlab.com:13785/yelpcamp_jm", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
