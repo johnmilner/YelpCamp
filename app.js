@@ -15,10 +15,13 @@ var express    = require("express"),
     var commentRoutes    = require("./routes/comments"),
         campgroundRoutes = require("./routes/campgrounds"),
         indexRoutes      = require("./routes/index");
-        
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12";
+
+//use the line below when pushing to heroku        
+//var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12";
+var url = "mongodb://localhost/yelp_camp_v12";
 
 mongoose.connect(url, {useMongoClient: true});
+//login for mongolab DB
 //mongoose.connect("mongodb://john:rusty@ds113785.mlab.com:13785/yelpcamp_jm", {useMongoClient: true});
 
 
@@ -30,7 +33,8 @@ app.use(flash());
 mongoose.Promise = global.Promise;
 //seedDB(); //seed the DB
 
-// PASSPORT CONFIGURATION
+// MOMENT & PASSPORT CONFIGURATION
+app.locals.moment = require('moment');
 app.use(require("express-session")({
     secret: "Tater Tots are very tasty and delicious!",
     resave: false,
@@ -67,3 +71,14 @@ app.listen(process.env.PORT, process.env.IP, function() {
 // NEW     /dogs/new  GET   Displays form to make a new dog
 // CREATE  /dogs      POST  Add new dog to DB
 // SHOW    /dogs/:id  GET   Shows info about one dog
+
+//GoogleMaps API KEY
+//AIzaSyCKGMzAxVxXPe5FqGnLkrxcFAD9ypmjtSU
+
+//<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+//type="text/javascript"></script>
+
+
+//to-do list
+//add placeholders to edit ejs
+

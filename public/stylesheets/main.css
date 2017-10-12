@@ -13,3 +13,18 @@
 .delete-form {
     display: inline;
 }
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.list-group a {
+    color: white;
+    text-decoration: none;
+}
+
+.list-group a:hover {
+    color: #333;
+}
