@@ -71,13 +71,5 @@ app.listen(process.env.PORT, process.env.IP, function() {
 // CREATE  /dogs      POST  Add new dog to DB
 // SHOW    /dogs/:id  GET   Shows info about one dog
 
-//GoogleMaps API KEY
-//AIzaSyCKGMzAxVxXPe5FqGnLkrxcFAD9ypmjtSU
 
-//<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-//type="text/javascript"></script>
-
-
-//to-do list
-//add placeholders to edit ejs
 
