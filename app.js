@@ -17,12 +17,11 @@ var express    = require("express"),
         indexRoutes      = require("./routes/index");
 
 //use the line below when pushing to heroku        
-//var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12";
-var url = "mongodb://localhost/yelp_camp_v12";
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12";
+//var url = "mongodb://localhost/yelp_camp_v12";
 
 mongoose.connect(url, {useMongoClient: true});
 //login for mongolab DB
-//mongoose.connect("mongodb://john:rusty@ds113785.mlab.com:13785/yelpcamp_jm", {useMongoClient: true});
 
 
 app.use(bodyParser.urlencoded({extended: true}));
