@@ -46,10 +46,13 @@ router.get("/login", function(req, res){
 // app.post("/login", middleware, callback)
 router.post("/login", passport.authenticate("local",
         {
-            successRedirect: "/campgrounds",
+            //successRedirect: "/campgrounds",
+            failureFlash: true,
             failureRedirect: "/login"
             
         }), function(req, res){
+            req.flash("success", "Welcome! Logged you in as " + req.user.username + "!");
+            res.redirect("/campgrounds");
 });
 
 // logout logic route
